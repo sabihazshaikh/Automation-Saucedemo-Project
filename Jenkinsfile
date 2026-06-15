@@ -5,13 +5,14 @@ pipeline{
             steps{ git 'https://github.com/laxmiambekar1096/Automation_Projects.git'}
         }
         stage('Build'){
-            steps { sh 'mvn clen install' }
+            steps { bat 'mvn clean install' }
         }
         stage('Test'){
-            steps{ sh 'mvn test' }
+            steps{ bat 'mvn test' }
         }
     }
     post{
         always { junit 'target/surefire-reports/*.xml'
     }
+}
 }
