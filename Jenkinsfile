@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage('Checkout'){
-            steps{ git 'https://github.com/laxmiambekar1096/Automation_Projects.git'}
+            steps{ git 'https://github.com/sabihazshaikh/Automation-Saucedemo-Project.git'}
         }
         stage('Build'){
             steps { bat 'mvn clean install' }
