@@ -15,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
@@ -49,13 +48,8 @@ public class BaseTest {
 	   else if(browser.equalsIgnoreCase("firefox")) {
 		   wd=new FirefoxDriver();
 	   }
-	   else if(browser.equalsIgnoreCase("firefox")) {
-
-		    FirefoxOptions options = new FirefoxOptions();
-		    options.addArguments("--headless");
-
-		    wd = new FirefoxDriver(options);
-		}
+	  
+		
 	   wd.manage().window().maximize();
 	   wd.get(prop.getProperty("url"));
 	   log.info("Browser launched and navigated to URL");
